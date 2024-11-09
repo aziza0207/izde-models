@@ -22,6 +22,7 @@ class GuestHouse(models.Model):
     created_at = models.DateTimeField(
         auto_now_add=True, verbose_name=_("Дата создания")
     )
+    address = models.OneToOneField(to="Address", on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.name
